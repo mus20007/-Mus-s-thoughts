@@ -1,0 +1,244 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;color: #100701;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    color: #180c01;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #68614b;
+    padding: 10px;
+    box-shadow: -2px 0 5px rgba(255, 255, 255, 0);
+    order: 2;
+}
+
+.sidebar button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #31250d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+}
+
+.sidebar button:hover {
+    background-color: #0056b3;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0
+}
+
+.sidebar ul li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #fffffff0;
+    position: relative;
+    color: white; /* Set font color to white */
+}
+
+.sidebar ul li:hover {
+    background-color: #fffcfc;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    order: 1;
+    color: #231301;
+}
+
+.text-container {
+    position: relative;
+    border: 1px solid #291910;
+    border-radius: 4px;
+    padding: 10px;
+    min-height: 200px;
+}
+
+#textEditor {
+    min-height: 180px;
+    font-size: 16px;
+    outline: none; /* Remove outline when focused */
+    padding-top: 40px; /* Space for the upload button */
+    white-space: pre-wrap; /* Ensure text wraps */
+    word-wrap: break-word; /* Break long words if necessary */
+    overflow-wrap: break-word; /* Modern alternative to word-wrap */
+    width: 100%; /* Ensure the editor takes up the full width */
+    border: 1px solid #170b03; /* Add border for better visual */
+    padding: 10px; /* Add padding for better spacing */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    overflow-y: auto; /* Add vertical scrollbar if content overflows */
+    background-color: rgb(255, 254, 253);
+    max-height: 400px; /* Optional: Set a maximum height */
+    font-family:'Times New Roman', Times, serif
+}
+
+#textEditor:empty::before {
+    content: attr(placeholder);
+    color: #100701;
+}
+
+.upload-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #201103ed;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.upload-button:hover {
+    background: #180c01;
+}
+.toolbar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px; /* Space between buttons */
+}
+
+.toolbar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px; /* Space between buttons */
+}
+
+.toolbar-button {
+    background: #231301;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.toolbar-button:hover {
+    background: #0056b3;
+}
+
+.color-picker {
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    display: flex; /* Ensure it's visible */
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+.color-option:hover {
+    opacity: 0.8;
+}
+.password-options {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.password-options button {
+    width: 100%;
+    padding: 10px;
+    background-color: #291d0e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.password-options button:hover {
+    background-color: #e0e1c0;
+}
+
+#changePassword {
+    background-color: #dbd4c0;
+    color: black;
+}
+
+#changePassword:hover {
+    background-color: #e0a800;
+}
+
+#imageUpload {
+    display: none; /* Hide the file input */
+}
+
+#textEditor img {
+    max-width: 30%; /* Restrict image width */
+    height: auto;
+    display: block;
+    margin: 10px auto; /* Center the image horizontally */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    resize: both; /* Allow resizing */
+    overflow: auto; /* Show scrollbars if needed */
+
+}
+
+.context-menu {
+    position: absolute;
+    background-color: rgb(6, 2, 0);
+    border: 1px solid #0e0000;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 5px 0;
+    display: block;
+}
+
+.context-menu button {
+    width: 100%;
+    padding: 8px 16px;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.context-menu button:hover {
+    background-color: #f4f4f4;
+}

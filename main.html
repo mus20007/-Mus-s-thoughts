@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text and Image Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <button id="newText">+</button>
+            <ul id="textList"></ul>
+            <div class="password-options">
+                <button id="setPassword">Set Password</button>
+                <button id="changePassword">Change Password</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="text-container">
+                <div class="toolbar">
+                    <button id="textColorButton" class="toolbar-button">A</button>
+                    <button id="backgroundColorButton" class="toolbar-button">🖌️</button>
+                    <button id="boldButton" class="toolbar-button">B</button>
+                    <button id="underlineButton" class="toolbar-button">U</button>
+                    <label for="imageUpload" class="toolbar-button">📷</label>
+                    <input type="file" id="imageUpload" accept="image/*">
+                </div>
+                <div id="textEditor" contenteditable="true" placeholder="Write your text here..."></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

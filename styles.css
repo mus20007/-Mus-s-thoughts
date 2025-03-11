@@ -2,29 +2,28 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;color: #100701;
+    display: flex;
     height: 100vh;
 }
 
 .container {
     display: flex;
     width: 100%;
-    color: #180c01;
 }
 
 .sidebar {
-    width: 250px;
-    background-color: #68614b;
+    width: 250px; /* Fixed width for sidebar */
+    background-color:  #68614b; /* Dark background for sidebar */
     padding: 10px;
-    box-shadow: -2px 0 5px rgba(255, 255, 255, 0);
-    order: 2;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    order: 2; /* Move sidebar to the right */
 }
 
 .sidebar button {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #31250d;
+    background-color:#31250d;  
     color: white;
     border: none;
     cursor: pointer;
@@ -41,31 +40,30 @@ body {
 
 .sidebar ul {
     list-style-type: none;
-    padding: 0
+    padding: 0;
 }
 
 .sidebar ul li {
     padding: 10px;
     cursor: pointer;
-    border-bottom: 1px solid #fffffff0;
+    border-bottom: 1px solid #444; /* Darker border for contrast */
     position: relative;
     color: white; /* Set font color to white */
 }
 
 .sidebar ul li:hover {
-    background-color: #fffcfc;
+    background-color: #444; /* Darker background on hover */
 }
 
 .main-content {
     flex-grow: 1;
     padding: 20px;
-    order: 1;
-    color: #231301;
+    order: 1; /* Move main content to the left */
 }
 
 .text-container {
     position: relative;
-    border: 1px solid #291910;
+    border: 1px solid #ddd;
     border-radius: 4px;
     padding: 10px;
     min-height: 200px;
@@ -74,56 +72,25 @@ body {
 #textEditor {
     min-height: 180px;
     font-size: 16px;
-    outline: none; /* Remove outline when focused */
-    padding-top: 40px; /* Space for the upload button */
-    white-space: pre-wrap; /* Ensure text wraps */
-    word-wrap: break-word; /* Break long words if necessary */
-    overflow-wrap: break-word; /* Modern alternative to word-wrap */
-    width: 100%; /* Ensure the editor takes up the full width */
-    border: 1px solid #170b03; /* Add border for better visual */
-    padding: 10px; /* Add padding for better spacing */
-    box-sizing: border-box; /* Include padding and border in the element's total width */
-    overflow-y: auto; /* Add vertical scrollbar if content overflows */
-    background-color: rgb(255, 254, 253);
-    max-height: 400px; /* Optional: Set a maximum height */
-    font-family:'Times New Roman', Times, serif
+    outline: none;
+    padding-top: 40px; /* Space for the toolbar */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #textEditor:empty::before {
     content: attr(placeholder);
-    color: #100701;
-}
-
-.upload-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #201103ed;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.upload-button:hover {
-    background: #180c01;
-}
-.toolbar {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    gap: 5px; /* Space between buttons */
+    color: #999;
 }
 
 .toolbar {
-    position: absolute;
+    position: top right;
     top: 10px;
     right: 10px;
     display: flex;
@@ -131,7 +98,7 @@ body {
 }
 
 .toolbar-button {
-    background: #231301;
+    background: #201103ed;
     color: white;
     border: none;
     border-radius: 4px;
@@ -172,6 +139,7 @@ body {
 .color-option:hover {
     opacity: 0.8;
 }
+
 .password-options {
     margin-top: 20px;
     display: flex;
@@ -182,7 +150,7 @@ body {
 .password-options button {
     width: 100%;
     padding: 10px;
-    background-color: #291d0e;
+    background-color: #291d0e;  
     color: white;
     border: none;
     border-radius: 4px;
@@ -191,11 +159,11 @@ body {
 }
 
 .password-options button:hover {
-    background-color: #e0e1c0;
+    background-color:  #e0e1c0;
 }
 
 #changePassword {
-    background-color: #dbd4c0;
+    background-color:   #dbd4c0;
     color: black;
 }
 
@@ -203,42 +171,35 @@ body {
     background-color: #e0a800;
 }
 
-#imageUpload {
-    display: none; /* Hide the file input */
-}
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: row
+    }
 
-#textEditor img {
-    max-width: 30%; /* Restrict image width */
-    height: auto;
-    display: block;
-    margin: 10px auto; /* Center the image horizontally */
-    border-radius: 4px; /* Optional: Add rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-    resize: both; /* Allow resizing */
-    overflow: auto; /* Show scrollbars if needed */
+    .sidebar {
+        width: 100%; /* Full width on mobile */
+        order: 1; 
+    }
 
-}
+    .main-content {
+        order: 2; /* Move main content below the sidebar */
+        padding: 10px; /* Reduce padding on mobile */
+    }
 
-.context-menu {
-    position: absolute;
-    background-color: rgb(6, 2, 0);
-    border: 1px solid #0e0000;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    padding: 5px 0;
-    display: block;
-}
+    #textEditor {
+        font-size: 14px; /* Smaller font size on mobile */
+        padding-top: 20px; /* Adjust padding for toolbar */
+    }
 
-.context-menu button {
-    width: 100%;
-    padding: 8px 16px;
-    text-align: left;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-}
+    .toolbar {
+        top: 5px; /* Adjust toolbar position */
+        right: 5px;
+    }
 
-.context-menu button:hover {
-    background-color: #f4f4f4;
+    .toolbar-button {
+        width: 25px; /* Smaller buttons on mobile */
+        height: 25px;
+        font-size: 14px;
+    }
 }

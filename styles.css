@@ -9,22 +9,21 @@ body {
 .container {
     display: flex;
     width: 100%;
-    flex-direction: column; /* Stack sidebar and main content vertically on mobile */
 }
 
 .sidebar {
-    width: 100%; /* Full width on mobile */
-    background-color: #333; /* Dark background for sidebar */
+    width: 250px; /* Fixed width for sidebar */
+    background-color:  #68614b; /* Dark background for sidebar */
     padding: 10px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    order: 2;
+    order: 2; /* Move sidebar to the right */
 }
 
 .sidebar button {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #007bff;
+    background-color:#31250d;  
     color: white;
     border: none;
     cursor: pointer;
@@ -59,7 +58,7 @@ body {
 .main-content {
     flex-grow: 1;
     padding: 20px;
-    order: 1;
+    order: 1; /* Move main content to the left */
 }
 
 .text-container {
@@ -82,7 +81,7 @@ body {
     border: 1px solid #ddd;
     padding: 10px;
     box-sizing: border-box;
-    background-color: #f9f9f9; /* Light background for text editor */
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #textEditor:empty::before {
@@ -91,7 +90,7 @@ body {
 }
 
 .toolbar {
-    position: absolute;
+    position: top right;
     top: 10px;
     right: 10px;
     display: flex;
@@ -99,7 +98,7 @@ body {
 }
 
 .toolbar-button {
-    background: #007bff;
+    background: #201103ed;
     color: white;
     border: none;
     border-radius: 4px;
@@ -151,7 +150,7 @@ body {
 .password-options button {
     width: 100%;
     padding: 10px;
-    background-color: #28a745;
+    background-color: #291d0e;  
     color: white;
     border: none;
     border-radius: 4px;
@@ -160,11 +159,11 @@ body {
 }
 
 .password-options button:hover {
-    background-color: #218838;
+    background-color:  #e0e1c0;
 }
 
 #changePassword {
-    background-color: #ffc107;
+    background-color:   #dbd4c0;
     color: black;
 }
 
@@ -172,6 +171,38 @@ body {
     background-color: #e0a800;
 }
 
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: row
+    }
+
+    .sidebar {
+        width: 100%; /* Full width on mobile */
+        order: 1; 
+    }
+
+    .main-content {
+        order: 2; /* Move main content below the sidebar */
+        padding: 10px; /* Reduce padding on mobile */
+    }
+
+    #textEditor {
+        font-size: 14px; /* Smaller font size on mobile */
+        padding-top: 20px; /* Adjust padding for toolbar */
+    }
+
+    .toolbar {
+        top: 5px; /* Adjust toolbar position */
+        right: 5px;
+    }
+
+    .toolbar-button {
+        width: 25px; /* Smaller buttons on mobile */
+        height: 25px;
+        font-size: 14px;
+    }
+}
 /* Mobile responsiveness */
 @media (max-width: 600px) {
     .container {
